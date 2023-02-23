@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  java:
+    tty: true
+    build:
+      context: ../
+      dockerfile: app.dockerfile
+      args:
+        - APP_ENV=local
+        - GITHUB_SERVER_USER=${GITHUB_SERVER_USER}
+        - GITHUB_SERVER_PASSWORD=${GITHUB_SERVER_PASSWORD}
+    restart: always
+    container_name: general_java_app_template
+    ports:
+      - "${PORT}:${PORT}"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ../app/target/package.jar:/home/app/target/package.jar
+    networks:
+      - main_network
+networks:
+  main_network:
+    driver: bridge
