@@ -7,6 +7,7 @@ services:
       dockerfile: app.dockerfile
       args:
         - APP_ENV=local
+        - PORT=${PORT}
         - GITHUB_SERVER_USER=${GITHUB_SERVER_USER}
         - GITHUB_SERVER_PASSWORD=${GITHUB_SERVER_PASSWORD}
     restart: always
@@ -16,7 +17,7 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     volumes:
-      - ../app/target/package.jar:/home/app/target/package.jar
+      - ../app:/home/app
     networks:
       - main_network
 networks:
