@@ -5,6 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.felipemenezesdm</groupId>
+    <name>General Java App Template</name>
     <artifactId>general-java-app-template</artifactId>
     <version>1.0.0</version>
 
@@ -35,15 +36,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
-        </dependency>
-
-        <!-- Logback -->
-
-        <!-- Secrets -->
-        <dependency>
-            <groupId>br.com.felipemenezesdm</groupId>
-            <artifactId>maven-secret-manager-suite</artifactId>
-            <version>${maven.secret.maneger.suite.version}</version>
         </dependency>
     </dependencies>
 

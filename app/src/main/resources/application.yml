@@ -1,7 +1,12 @@
 server:
-  port: 8081
+  port: "${PORT:8081}"
   servlet:
     context-path: /api/v1
+
+app:
+  name: "${name}"
+  service-id: "${artifactId}"
+  log-channel: "stack"
 
 management:
   endpoints:
@@ -19,3 +24,7 @@ spring:
   devtools:
     restart:
       enabled: false
+
+logging:
+  pattern:
+    console: "%d{[yyyy-MM-dd HH:mm:ss]} ${spring.profiles.active:default}.%p: %m%n"

@@ -1,12 +1,8 @@
-ARG APP_ENV
-
 # Build
 FROM maven:3.9.0-eclipse-temurin-11-alpine AS build
 USER root
 ARG APP_ENV
 ARG PORT
-ARG GITHUB_SERVER_USER
-ARG GITHUB_SERVER_PASSWORD
 
 ENV APP_ENV=$APP_ENV
 ENV PORT=$PORT
@@ -15,16 +11,19 @@ WORKDIR /home/app
 
 COPY ./app .
 
-RUN mvn clean package -s settings.xml -Drepo.usrnm="${GITHUB_SERVER_USER}" -Drepo.pswd="${GITHUB_SERVER_PASSWORD}"
+RUN mvn clean package -s settings.xml
 
 # Execution
 FROM adoptopenjdk/openjdk11:x86_64-alpine-jre-11.0.18_10
 USER root
 ARG APP_ENV
 ARG PORT
+ARG PORT_DEBUG
 
 ENV APP_ENV=$APP_ENV
 ENV PORT=$PORT
+ENV PORT_DEBUG=$PORT_DEBUG
+ENV JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,address=*:${PORT_DEBUG},server=y,suspend=n"
 
 WORKDIR /home/app/target
 
