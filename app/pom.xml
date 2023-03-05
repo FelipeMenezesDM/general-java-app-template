@@ -5,7 +5,6 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.felipemenezesdm</groupId>
-    <name>General Java App Template</name>
     <artifactId>general-java-app-template</artifactId>
     <version>1.0.0</version>
 
@@ -16,7 +15,7 @@
     </parent>
 
     <properties>
-        <maven.secret.maneger.suite.version>1.0.0</maven.secret.maneger.suite.version>
+        <spring.logger.adapter.version>1.0.0</spring.logger.adapter.version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -36,6 +35,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
+        </dependency>
+
+        <!-- Logging Adapter -->
+        <dependency>
+            <groupId>br.com.felipemenezesdm</groupId>
+            <artifactId>spring-logger-adapter</artifactId>
+            <version>${spring.logger.adapter.version}</version>
         </dependency>
     </dependencies>
 

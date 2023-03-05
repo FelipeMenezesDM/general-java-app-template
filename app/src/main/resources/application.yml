@@ -3,11 +3,6 @@ server:
   servlet:
     context-path: /api/v1
 
-app:
-  name: "${name}"
-  service-id: "${artifactId}"
-  log-channel: "stack"
-
 management:
   endpoints:
     web:
