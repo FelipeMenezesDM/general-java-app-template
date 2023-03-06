@@ -4,7 +4,7 @@ service_account: application
 settings:
   port: 8081
   region: us-central1
-  scalling:
+  scaling:
     concurrency: 80
     min-instances: 0
     max-instances: 4
