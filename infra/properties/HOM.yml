@@ -1,1 +1,20 @@
-
+description: Application settings
+version: 1.0.0
+service_account: application
+settings:
+  port: 8081
+  region: us-central1
+  scalling:
+    concurrency: 80
+    min-instances: 0
+    max-instances: 4
+    timeout: 180
+    memory: 256Mi
+    cpu: 1
+  enable-ssl: true
+  ingress: all
+  cpu-throttling: true
+  execution-environment: gen1
+  instances: []
+logging:
+  driver: gcplogs
