@@ -37,14 +37,14 @@ Para a instalação desta aplicação em ambiente local, é necessário ter inst
 - IntelliJ
 
 #### Passo-a-passo
+
 1. [Baixe e instale o JDK 11](https://www.oracle.com/br/java/technologies/javase/jdk11-archive-downloads.html)
 2. [Baixe e instale o IntelliJ](https://www.jetbrains.com/pt-br/idea/download/#section=windows)
 3. Clone o projeto com o seguinte comando:
    ```
    git clone https://github.com/FelipeMenezesDM/general-java-app-template.git
    ```
-4. Configure a aplicação no IntelliJ:
-
+4. Configure a aplicação no IntelliJ:<br>
    ![](./assets/intellij-config.png)
    ```
    # VM Options
@@ -54,8 +54,7 @@ Para a instalação desta aplicação em ambiente local, é necessário ter inst
    PORT=8081
    ```
 5. Altere os parâmetros da aplicação de acordo com a necessidade
-6. Inicie a aplicação, que estará disponível no localhost:
-
+6. Inicie a aplicação, que estará disponível no localhost:<br>
    ![](./assets/intellij-start.png)
 
 ### Instalação com docker
