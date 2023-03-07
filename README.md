@@ -11,7 +11,7 @@
 - [Configuração](#configuração)
 - [Execução de testes](#execução-de-testes)
   - [Testes unitários](#testes-unitários)
-- [Links úteis](#links-úteis)
+  - [Testes integrados](#testes-integrados)
 
 ## Sobre
 - [Voltar](#tópicos)
@@ -57,7 +57,7 @@ Para a instalação desta aplicação em ambiente local, é necessário ter inst
 5. Altere os parâmetros da aplicação de acordo com a necessidade
 6. Baixe as dependências da aplicação usando os comandos do Maven:
    ```
-   mvn clean install
+   mvn clean install -Dmaven.test.skip
    ```
 7. Inicie a aplicação, que estará disponível no localhost:<br>
    ![](./assets/intellij-start.png)
@@ -111,6 +111,13 @@ Por ser uma aplicação Spring Boot, suas configurações podem ser alteradas di
 - [Voltar](#tópicos)
 - [Execução de testes](#execução-de-testes)
   - [Testes unitários](#testes-unitários)
+  - [Testes integrados](#testes-integrados)
 
 ### Testes unitários
-## Links úteis
+Os testes unitários deste projeto podem ser executados usando diretamente o comando do Maven:
+```
+mvn clean install
+```
+
+### Testes integrados
+As informações de execução dos testes integrados desta aplicação podem ser visualizadas diretamente na [documentação do pacotes de testes](./tests/integration/README.md).
