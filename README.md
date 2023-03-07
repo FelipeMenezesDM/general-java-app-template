@@ -34,6 +34,7 @@ Template padrão para criação de aplicações Java com Spring Boot.
 #### Pré-requisitos
 Para a instalação desta aplicação em ambiente local, é necessário ter instalado em sua máquina os seguintes recursos:
 - JDK 11
+- Maven 3.8.1
 - IntelliJ
 
 #### Passo-a-passo
@@ -54,7 +55,11 @@ Para a instalação desta aplicação em ambiente local, é necessário ter inst
    PORT=8081
    ```
 5. Altere os parâmetros da aplicação de acordo com a necessidade
-6. Inicie a aplicação, que estará disponível no localhost:<br>
+6. Baixe as dependências da aplicação usando os comandos do Maven:
+   ```
+   mvn clean install
+   ```
+7. Inicie a aplicação, que estará disponível no localhost:<br>
    ![](./assets/intellij-start.png)
 
 ### Instalação com docker
