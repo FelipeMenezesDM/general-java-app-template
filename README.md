@@ -75,8 +75,7 @@ Para a instalação em ambiente local desta aplicação usando Docker, você dev
    ```
    PORT=8081 PORT_DEBUG=8000 docker compose up -d
    ```
-4. Crie a configuração para do _RemoteSpringApplication_:
-
+4. Crie a configuração para do _RemoteSpringApplication_:<br>
    ![](./assets/intellij-config-remote-application.png)
    ```
    # VM Options
@@ -87,17 +86,14 @@ Para a instalação em ambiente local desta aplicação usando Docker, você dev
    ```
 5. **Em File > Settings > Build, Execution, Deployment > Compiler**, marque a opção "Build project automatically"
 6. **Em File > Settings > Advanced Settings > Compiler**, maque a opção "Allow auto-make to start even if developed application is currently running"
-7. Inicie o RemoveSpringApplication, **sem o modo debug**:
-   
+7. Inicie o RemoveSpringApplication, **sem o modo debug**:<br>
    ![](./assets/intellij-start-remote-application.png)
 8. Após isso, seu ambiente de desenvolvimento local estará disponível e qualquer alteração feita será refletida automaticamente no container Docker.
 
 #### Debug com Docker
-1. Crie a configuração para debug de aplicações remotas no IntelliJ:
-
+1. Crie a configuração para debug de aplicações remotas no IntelliJ:<br>
    ![](./assets/intellij-debug-docker.png)
-2. Inicie a configuração de Debug:
-
+2. Inicie a configuração de Debug:<br>
    ![](./assets/intellij-start-remote-debug.png)
 
 ## Configuração
