@@ -105,6 +105,8 @@ Para a instalação em ambiente local desta aplicação usando Docker, você dev
 - [Voltar](#tópicos)
 - [Configuração](#configuração)
 
+Por ser uma aplicação Spring Boot, suas configurações podem ser alteradas diretamente no arquivo **application.yml**, localizado no pacote _/app/src/main/resources_.
+
 ## Execução de testes
 - [Voltar](#tópicos)
 - [Execução de testes](#execução-de-testes)
