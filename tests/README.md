@@ -20,7 +20,7 @@ mvn clean install
 ```
 
 ## Execução com o Cucumber for Java
-O IntelliJ disponibiliza o plugin Cucumber for Java, que pode ser usado para configurar uma aplicação apartada para execução de testes de forma geral ou individualizada.
+O IntelliJ disponibiliza o plugin Cucumber for Java, que pode ser usado para configurar uma aplicação apartada para execução de testes, de forma geral ou individualizada.
 
 Outra vantagem do uso do plugin é a possibilidade de execução com passagem de variáveis de ambientes e propriedades de configuração do JDK.
 
