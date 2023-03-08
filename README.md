@@ -10,7 +10,7 @@
     - [Passo-a-passo](#passo-a-passo-1)
 - [Configuração](#configuração)
 - [Execução de testes](#execução-de-testes)
-  - [Testes unitários](#testes-unitários)
+  - [Testes unitários e mutantes](#testes-unitários-e-mutantes)
   - [Testes integrados](#testes-integrados)
 
 ## Sobre
@@ -110,13 +110,18 @@ Por ser uma aplicação Spring Boot, suas configurações podem ser alteradas di
 ## Execução de testes
 - [Voltar](#tópicos)
 - [Execução de testes](#execução-de-testes)
-  - [Testes unitários](#testes-unitários)
+  - [Testes unitários e mutantes](#testes-unitários-e-mutantes)
   - [Testes integrados](#testes-integrados)
 
-### Testes unitários
+### Testes unitários e mutantes
 Os testes unitários deste projeto podem ser executados usando diretamente o comando do Maven:
 ```
 mvn clean install
+```
+
+Para executar apenas os testes mutantes e gerar o relatório de cobertura, execute o código abaixo:
+```
+mvn org.pitest:pitest-maven:mutationCoverage
 ```
 
 ### Testes integrados

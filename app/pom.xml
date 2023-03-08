@@ -15,8 +15,12 @@
     </parent>
 
     <properties>
+        <mutation-min-coverage>50</mutation-min-coverage><!-- 0 > 100 -->
+        <unit-min-coverage>90</unit-min-coverage><!-- 0 > 100 -->
+
         <spring.logger.adapter.version>1.0.0</spring.logger.adapter.version>
         <spring.exception.handler.version>1.0.0</spring.exception.handler.version>
+        <jacoco.maven.plugin.version>0.8.8</jacoco.maven.plugin.version>
         <pitest.version>1.5.0</pitest.version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -77,14 +81,58 @@
                 </configuration>
             </plugin>
 
-            <!-- PITest -->
+            <!-- Jacoco - Unit Test -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.maven.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-check</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <outputDirectory>./target/reports/unit</outputDirectory>
+                    <rules>
+                        <rule>
+                            <limits>
+                                <limit>
+                                    <counter>LINE</counter>
+                                    <value>COVEREDRATIO</value>
+                                    <minimum>${unit-min-coverage}%</minimum>
+                                </limit>
+                            </limits>
+                        </rule>
+                    </rules>
+                    <excludes>
+                        <exclude>br/com/felipemenezesdm/Application.class</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!-- PITest - Mutation Test -->
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
                 <version>${pitest.version}</version>
                 <executions>
                     <execution>
-                        <id>pit-report</id>
+                        <id>report</id>
                         <phase>test</phase>
                         <goals>
                             <goal>mutationCoverage</goal>
@@ -92,10 +140,12 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <excludedClasses>
+                        <excludedClass>br.com.felipemenezesdm.Application</excludedClass>
+                    </excludedClasses>
                     <timestampedReports>false</timestampedReports>
-                    <reportsDirectory>./target/reports/</reportsDirectory>
-                    <mutationThreshold>100</mutationThreshold>
-                    <coverageThreshold>60</coverageThreshold>
+                    <reportsDirectory>./target/reports/mutation</reportsDirectory>
+                    <coverageThreshold>${mutation-min-coverage}</coverageThreshold>
                     <failWhenNoMutations>false</failWhenNoMutations>
                 </configuration>
             </plugin>
