@@ -17,6 +17,7 @@
     <properties>
         <spring.logger.adapter.version>1.0.0</spring.logger.adapter.version>
         <spring.exception.handler.version>1.0.0</spring.exception.handler.version>
+        <pitest.version>1.5.0</pitest.version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -51,6 +52,18 @@
             <artifactId>spring-exception-handler</artifactId>
             <version>${spring.exception.handler.version}</version>
         </dependency>
+
+        <!-- Unit/Mutation Test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -61,6 +74,26 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <excludeDevtools>false</excludeDevtools>
+                </configuration>
+            </plugin>
+
+            <!-- PITest -->
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>${pitest.version}</version>
+                <executions>
+                    <execution>
+                        <id>pit-report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <timestampedReports>false</timestampedReports>
+                    <reportsDirectory>./target/reports/</reportsDirectory>
                 </configuration>
             </plugin>
         </plugins>
