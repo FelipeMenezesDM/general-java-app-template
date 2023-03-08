@@ -1,0 +1,12 @@
+name: Build and Deploy to GCP - DEV
+on:
+  push:
+    branches: develop
+jobs:
+  ci-cd:
+    name: CI/CD
+    uses: felipemenezesdm/general-deploy-actions/.github/workflows/gcp-spring-app-dev.yml@v1
+    secrets: inherit
+    with:
+      service: ${{ github.event.repository.name }}
+      sha: ${{ github.sha }}
