@@ -120,4 +120,4 @@ mvn clean install
 ```
 
 ### Testes integrados
-As informações de execução dos testes integrados desta aplicação podem ser visualizadas diretamente na [documentação do pacotes de testes](./tests/integration/README.md).
+As informações de execução dos testes integrados desta aplicação podem ser visualizadas diretamente na [documentação do pacotes de testes](./tests/README.md).
