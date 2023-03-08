@@ -94,6 +94,9 @@
                 <configuration>
                     <timestampedReports>false</timestampedReports>
                     <reportsDirectory>./target/reports/</reportsDirectory>
+                    <mutationThreshold>100</mutationThreshold>
+                    <coverageThreshold>60</coverageThreshold>
+                    <failWhenNoMutations>false</failWhenNoMutations>
                 </configuration>
             </plugin>
         </plugins>
