@@ -15,7 +15,8 @@
     </parent>
 
     <properties>
-        <maven.secret.maneger.suite.version>1.0.0</maven.secret.maneger.suite.version>
+        <spring.logger.adapter.version>1.0.0</spring.logger.adapter.version>
+        <spring.exception.handler.version>1.0.0</spring.exception.handler.version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -37,13 +38,18 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Logback -->
-
-        <!-- Secrets -->
+        <!-- Logging Adapter -->
         <dependency>
             <groupId>br.com.felipemenezesdm</groupId>
-            <artifactId>maven-secret-manager-suite</artifactId>
-            <version>${maven.secret.maneger.suite.version}</version>
+            <artifactId>spring-logger-adapter</artifactId>
+            <version>${spring.logger.adapter.version}</version>
+        </dependency>
+
+        <!-- Exception handler -->
+        <dependency>
+            <groupId>br.com.felipemenezesdm</groupId>
+            <artifactId>spring-exception-handler</artifactId>
+            <version>${spring.exception.handler.version}</version>
         </dependency>
     </dependencies>
 

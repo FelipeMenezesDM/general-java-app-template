@@ -8,12 +8,12 @@ services:
       args:
         - APP_ENV=local
         - PORT=${PORT}
-        - GITHUB_SERVER_USER=${GITHUB_SERVER_USER}
-        - GITHUB_SERVER_PASSWORD=${GITHUB_SERVER_PASSWORD}
+        - PORT_DEBUG=${PORT_DEBUG}
     restart: always
     container_name: general_java_app_template
     ports:
       - "${PORT}:${PORT}"
+      - "${PORT_DEBUG}:${PORT_DEBUG}"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     volumes:
