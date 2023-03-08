@@ -1,9 +1,9 @@
 # Testes integrados
-Neste pacote estão configurados todos os testes funcionais integrados à aplicação. Eles serão utilizados para validar a integridade da aplicação nos ambientes através de automação.
+Neste pacote estão configurados todos os testes funcionais integrados à aplicação. Eles serão utilizados para validar a integridade da aplicação nos ambientes, através de automação.
 
-Este projeto usa Cucumber para implementar e executar todos os cenrários de teste. Após a execução, um relatório é gerado e pode ser usado para criar um histórico de execução dos testes.
+Este projeto usa Cucumber para implementar e executar todos os cenários mapeados. Após a execução, um relatório é gerado e pode ser usado para criar um histórico de execução dos testes.
 
-Vale ressaltar que, para que os testes seram executados corretamente, é necessário que a aplicação esteja habilitada no ambiente onde os testes estão sendo executados.
+Vale ressaltar que, para que os testes sejam executados corretamente, é necessário que a aplicação esteja habilitada no mesmo ambiente da execução.
 
 [Confira na documentação da aplicação como inicializá-la.](../README.md)
 
@@ -21,6 +21,8 @@ mvn clean install
 
 ## Execução com o Cucumber for Java
 O IntelliJ disponibiliza o plugin Cucumber for Java, que pode ser usado para configurar uma aplicação apartada para execução de testes de forma geral ou individualizada.
+
+Outra vantagem do uso do plugin é a possibilidade de execução com passagem de variáveis de ambientes e propriedades de configuração do JDK.
 
 1. Para iniciar, instale o Cucumber for Java em **File > Settings > Plugins**.
 2. Em **Run > Edit Configurations**, crie uma nova configuração do Cucumber for Java:<br>
