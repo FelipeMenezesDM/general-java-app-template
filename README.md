@@ -119,7 +119,7 @@ Os testes unitários deste projeto podem ser executados usando diretamente o com
 mvn clean install
 ```
 
-Para executar apenas os testes mutantes e gerar o relatório de cobertura, execute o código abaixo:
+Para executar apenas os testes mutantes e gerar o relatório de cobertura, execute o comando abaixo:
 ```
 mvn org.pitest:pitest-maven:mutationCoverage
 ```
