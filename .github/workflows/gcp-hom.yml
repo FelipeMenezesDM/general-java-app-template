@@ -5,7 +5,7 @@ on:
 jobs:
   ci-cd:
     name: CI/CD
-    uses: felipemenezesdm/general-deploy-actions/.github/workflows/gcp-spring-app-hom.yml@v1
+    uses: felipemenezesdm/general-deploy-actions/.github/workflows/gcp-java-maven-app-hom.yml@v1
     secrets: inherit
     with:
       service: ${{ github.event.repository.name }}
