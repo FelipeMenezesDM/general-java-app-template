@@ -57,7 +57,11 @@ Para a instalação desta aplicação em ambiente local, é necessário ter inst
 5. Altere os parâmetros da aplicação de acordo com a necessidade
 6. Baixe as dependências da aplicação usando os comandos do Maven:
    ```
+   # Caso o projeto não utilize packages do GitHub
    mvn clean install -Dmaven.test.skip=true
+   
+   # Caso o proejto utilize packages do GitHub
+   mvn clean install -Dmaven.test.skip=true -Dserver.github.username=SEU_USUARIO_GITHUB -Dserver.github.password=SEU_PERSONAL_TOKEN_GITHUB
    ```
 7. Inicie a aplicação, que estará disponível no localhost:<br>
    ![](./assets/intellij-start.png)
@@ -76,7 +80,7 @@ Para a instalação em ambiente local desta aplicação usando Docker, você dev
    git clone https://github.com/FelipeMenezesDM/general-java-app-template.git
    ```
 2. [Baixe e instale a versão mais recente do Docker](https://docs.docker.com/desktop/install/windows-install/)
-3. Execute o comando abaixo para baixar as imagens e criar os containers do Docker:
+3. Execute o comando abaixo, na raíz do projeto, para baixar as imagens e criar os containers do Docker:
    ```
    PORT=8081 PORT_DEBUG=8000 docker compose -f ./infra/docker-compose.yml up -d
    ```
