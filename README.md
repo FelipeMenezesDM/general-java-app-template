@@ -57,7 +57,7 @@ Para a instalação desta aplicação em ambiente local, é necessário ter inst
 5. Altere os parâmetros da aplicação de acordo com a necessidade
 6. Baixe as dependências da aplicação usando os comandos do Maven:
    ```
-   mvn clean install -Dmaven.test.skip
+   mvn clean install -Dmaven.test.skip=true
    ```
 7. Inicie a aplicação, que estará disponível no localhost:<br>
    ![](./assets/intellij-start.png)
@@ -78,7 +78,7 @@ Para a instalação em ambiente local desta aplicação usando Docker, você dev
 2. [Baixe e instale a versão mais recente do Docker](https://docs.docker.com/desktop/install/windows-install/)
 3. Execute o comando abaixo para baixar as imagens e criar os containers do Docker:
    ```
-   PORT=8081 PORT_DEBUG=8000 docker compose up -d
+   PORT=8081 PORT_DEBUG=8000 docker compose -f ./infra/docker-compose.yml up -d
    ```
 4. Crie a configuração para do _RemoteSpringApplication_:<br>
    ![](./assets/intellij-config-remote-application.png)
@@ -121,7 +121,7 @@ mvn clean install
 
 Para executar apenas os testes mutantes e gerar o relatório de cobertura, execute o comando abaixo:
 ```
-mvn org.pitest:pitest-maven:mutationCoverage
+mvn pitest-maven:mutationCoverage
 ```
 
 ### Testes integrados

@@ -9,6 +9,8 @@ services:
         - APP_ENV=local
         - PORT=${PORT}
         - PORT_DEBUG=${PORT_DEBUG}
+        - GITHUB_ACTOR=
+        - GITHUB_PASSWORD=
     restart: always
     container_name: general_java_app_template
     ports:
