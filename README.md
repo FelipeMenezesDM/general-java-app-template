@@ -10,7 +10,7 @@
     - [Passo-a-passo](#passo-a-passo-1)
 - [Configuração](#configuração)
 - [Execução de testes](#execução-de-testes)
-  - [Testes unitários](#testes-unitários)
+  - [Testes unitários e mutantes](#testes-unitários-e-mutantes)
   - [Testes integrados](#testes-integrados)
 
 ## Sobre
@@ -57,7 +57,11 @@ Para a instalação desta aplicação em ambiente local, é necessário ter inst
 5. Altere os parâmetros da aplicação de acordo com a necessidade
 6. Baixe as dependências da aplicação usando os comandos do Maven:
    ```
-   mvn clean install -Dmaven.test.skip
+   # Caso o projeto não utilize packages do GitHub
+   mvn clean install -Dmaven.test.skip=true
+   
+   # Caso o proejto utilize packages do GitHub
+   mvn clean install -Dmaven.test.skip=true -Dserver.github.username=SEU_USUARIO_GITHUB -Dserver.github.password=SEU_PERSONAL_TOKEN_GITHUB
    ```
 7. Inicie a aplicação, que estará disponível no localhost:<br>
    ![](./assets/intellij-start.png)
@@ -76,9 +80,9 @@ Para a instalação em ambiente local desta aplicação usando Docker, você dev
    git clone https://github.com/FelipeMenezesDM/general-java-app-template.git
    ```
 2. [Baixe e instale a versão mais recente do Docker](https://docs.docker.com/desktop/install/windows-install/)
-3. Execute o comando abaixo para baixar as imagens e criar os containers do Docker:
+3. Execute o comando abaixo, na raíz do projeto, para baixar as imagens e criar os containers do Docker:
    ```
-   PORT=8081 PORT_DEBUG=8000 docker compose up -d
+   PORT=8081 PORT_DEBUG=8000 docker compose -f ./infra/docker-compose.yml up -d
    ```
 4. Crie a configuração para do _RemoteSpringApplication_:<br>
    ![](./assets/intellij-config-remote-application.png)
@@ -110,13 +114,18 @@ Por ser uma aplicação Spring Boot, suas configurações podem ser alteradas di
 ## Execução de testes
 - [Voltar](#tópicos)
 - [Execução de testes](#execução-de-testes)
-  - [Testes unitários](#testes-unitários)
+  - [Testes unitários e mutantes](#testes-unitários-e-mutantes)
   - [Testes integrados](#testes-integrados)
 
-### Testes unitários
+### Testes unitários e mutantes
 Os testes unitários deste projeto podem ser executados usando diretamente o comando do Maven:
 ```
 mvn clean install
+```
+
+Para executar apenas os testes mutantes e gerar o relatório de cobertura, execute o comando abaixo:
+```
+mvn pitest-maven:mutationCoverage
 ```
 
 ### Testes integrados

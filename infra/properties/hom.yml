@@ -16,5 +16,13 @@ settings:
   cpu-throttling: true
   execution-environment: gen1
   instances: []
+command:
+  entrypoint:
+  args:
 logging:
   driver: gcplogs
+test:
+  disable:
+    unit: false
+    mutation: false
+    integration: false
