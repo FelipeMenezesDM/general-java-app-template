@@ -1,4 +1,4 @@
-# General Laravel App Template
+# General Java App Template
 
 ## Informações gerais
 ### Descrição
