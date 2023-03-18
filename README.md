@@ -17,7 +17,7 @@
 - [Voltar](#tópicos)
 - [Sobre](#sobre)
 
-Template padrão para criação de aplicações Java com Spring Boot.
+Template padrão para criação de aplicações Java com Spring Boot. Consulte a [documentação da aplicação](./app/README.md) para saber mais detalhes.
 
 ## Instalação local
 - [Voltar](#tópicos)
