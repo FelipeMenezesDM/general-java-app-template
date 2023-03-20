@@ -144,7 +144,7 @@
                         <format>XML</format>
                         <format>HTML</format>
                     </outputFormats>
-                    <coverageThreshold>${mutation-min-coverage}</coverageThreshold>
+                    <mutationThreshold>${mutation-min-coverage}</mutationThreshold>
                     <failWhenNoMutations>false</failWhenNoMutations>
                 </configuration>
             </plugin>
