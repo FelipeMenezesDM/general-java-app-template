@@ -108,6 +108,10 @@
                 </executions>
                 <configuration>
                     <outputDirectory>./reports/unit</outputDirectory>
+                    <formats>
+                        <format>XML</format>
+                        <format>HTML</format>
+                    </formats>
                     <rules>
                         <rule>
                             <limits>
@@ -136,6 +140,10 @@
                     </excludedClasses>
                     <timestampedReports>false</timestampedReports>
                     <reportsDirectory>./reports/mutation</reportsDirectory>
+                    <outputFormats>
+                        <format>XML</format>
+                        <format>HTML</format>
+                    </outputFormats>
                     <coverageThreshold>${mutation-min-coverage}</coverageThreshold>
                     <failWhenNoMutations>false</failWhenNoMutations>
                 </configuration>
