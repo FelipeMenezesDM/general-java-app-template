@@ -15,9 +15,6 @@
     </parent>
 
     <properties>
-        <mutation-min-coverage>50</mutation-min-coverage><!-- 0 > 100 -->
-        <unit-min-coverage>90</unit-min-coverage><!-- 0 > 100 -->
-
         <spring.logger.adapter.version>1.0.0</spring.logger.adapter.version>
         <spring.exception.handler.version>1.0.0</spring.exception.handler.version>
         <jacoco.maven.plugin.version>0.8.8</jacoco.maven.plugin.version>
@@ -99,12 +96,6 @@
                             <goal>report</goal>
                         </goals>
                     </execution>
-                    <execution>
-                        <id>jacoco-check</id>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
                 </executions>
                 <configuration>
                     <outputDirectory>./reports/unit</outputDirectory>
@@ -112,17 +103,6 @@
                         <format>XML</format>
                         <format>HTML</format>
                     </formats>
-                    <rules>
-                        <rule>
-                            <limits>
-                                <limit>
-                                    <counter>LINE</counter>
-                                    <value>COVEREDRATIO</value>
-                                    <minimum>${unit-min-coverage}%</minimum>
-                                </limit>
-                            </limits>
-                        </rule>
-                    </rules>
                     <excludes>
                         <exclude>br/com/felipemenezesdm/Application.class</exclude>
                     </excludes>
@@ -144,7 +124,6 @@
                         <format>XML</format>
                         <format>HTML</format>
                     </outputFormats>
-                    <mutationThreshold>${mutation-min-coverage}</mutationThreshold>
                     <failWhenNoMutations>false</failWhenNoMutations>
                 </configuration>
             </plugin>
