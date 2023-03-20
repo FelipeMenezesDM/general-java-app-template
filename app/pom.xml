@@ -107,7 +107,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <outputDirectory>./target/reports/unit</outputDirectory>
+                    <outputDirectory>./reports/unit</outputDirectory>
                     <rules>
                         <rule>
                             <limits>
@@ -135,7 +135,7 @@
                         <excludedClass>br.com.felipemenezesdm.Application</excludedClass>
                     </excludedClasses>
                     <timestampedReports>false</timestampedReports>
-                    <reportsDirectory>./target/reports/mutation</reportsDirectory>
+                    <reportsDirectory>./reports/mutation</reportsDirectory>
                     <coverageThreshold>${mutation-min-coverage}</coverageThreshold>
                     <failWhenNoMutations>false</failWhenNoMutations>
                 </configuration>
