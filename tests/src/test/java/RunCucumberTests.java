@@ -5,8 +5,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         glue = {"configs", "steps"},
-        plugin = "json:target/reports/application-test-report.json",
+        plugin = {"pretty", "json:reports/integration/default.json"},
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class RunCucumber {
+public class RunCucumberTests {
 }
