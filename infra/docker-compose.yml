@@ -9,8 +9,8 @@ services:
         - APP_ENV=local
         - PORT=${PORT}
         - PORT_DEBUG=${PORT_DEBUG}
-        - GITHUB_ACTOR=
-        - GITHUB_PASSWORD=
+        - GITHUB_ACTOR=${GITHUB_ACTOR:-}
+        - GITHUB_TOKEN=${GITHUB_TOKEN:-}
     restart: always
     container_name: general_java_app_template
     ports:
@@ -19,7 +19,7 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     volumes:
-      - ../app:/home/app
+      - ../:/home
     networks:
       - main_network
 networks:

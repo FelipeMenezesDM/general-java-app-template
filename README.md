@@ -50,18 +50,17 @@ Para a instalação desta aplicação em ambiente local, é necessário ter inst
    ```
    # VM Options
    -Dspring.profiles.active=local
+   -Dserver.github.username=[SEU_USUARIO_GITHUB]
+   -Dserver.github.password=[SEU_PERSONAL_TOKEN_GITHUB]
    
    # Environment variables
    PORT=8081
+   PORT_DEBUG=8000
    ```
 5. Altere os parâmetros da aplicação de acordo com a necessidade
 6. Baixe as dependências da aplicação usando os comandos do Maven:
    ```
-   # Caso o projeto não utilize packages do GitHub
    mvn clean install -Dmaven.test.skip=true
-   
-   # Caso o proejto utilize packages do GitHub
-   mvn clean install -Dmaven.test.skip=true -Dserver.github.username=SEU_USUARIO_GITHUB -Dserver.github.password=SEU_PERSONAL_TOKEN_GITHUB
    ```
 7. Inicie a aplicação, que estará disponível no localhost:<br>
    ![](./assets/intellij-start.png)
@@ -82,16 +81,19 @@ Para a instalação em ambiente local desta aplicação usando Docker, você dev
 2. [Baixe e instale a versão mais recente do Docker](https://docs.docker.com/desktop/install/windows-install/)
 3. Execute o comando abaixo, na raíz do projeto, para baixar as imagens e criar os containers do Docker:
    ```
-   PORT=8081 PORT_DEBUG=8000 docker compose -f ./infra/docker-compose.yml up -d
+   PORT=8081 PORT_DEBUG=8000 GITHUB_ACTOR=[SEU_USUARIO_GITHUB] GITHUB_TOKEN=[SEU_PERSONAL_TOKEN_GITHUB] docker compose -f ./infra/docker-compose.yml up -d
    ```
 4. Crie a configuração para do _RemoteSpringApplication_:<br>
    ![](./assets/intellij-config-remote-application.png)
    ```
    # VM Options
    -Dspring.profiles.active=local
+   -Dserver.github.username=[SEU_USUARIO_GITHUB]
+   -Dserver.github.password=[SEU_PERSONAL_TOKEN_GITHUB]
    
    # Environment variables
    PORT=8081
+   PORT_DEBUG=8000
    ```
 5. **Em File > Settings > Build, Execution, Deployment > Compiler**, marque a opção "Build project automatically"
 6. **Em File > Settings > Advanced Settings > Compiler**, maque a opção "Allow auto-make to start even if developed application is currently running"
