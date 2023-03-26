@@ -1,9 +1,9 @@
 # Testes integrados
 Neste pacote estão configurados todos os testes funcionais integrados à aplicação. Eles serão utilizados para validar a integridade da aplicação nos ambientes, através de automação.
 
-Este projeto usa Cucumber para implementar e executar todos os cenários mapeados. Após a execução, um relatório é gerado e pode ser usado para criar um histórico de execução dos testes.
+Este projeto usa o Cucumber para implementar e executar todos os cenários mapeados. Após a execução, um relatório é gerado e pode ser usado para criar um histórico de execução dos testes.
 
-Vale ressaltar que, para que os testes sejam executados corretamente, é necessário que a aplicação esteja habilitada no mesmo ambiente da execução.
+Vale ressaltar que, para que os testes sejam executados corretamente, a aplicação deve estar habilitada no mesmo ambiente onde está o pacote de testes.
 
 [Confira na documentação da aplicação como inicializá-la.](../README.md)
 
