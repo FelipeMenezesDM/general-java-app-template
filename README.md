@@ -38,9 +38,8 @@ Para a instalação desta aplicação em ambiente local, é necessário ter inst
 - IntelliJ
 
 #### Passo-a-passo
-
-1. [Baixe e instale o JDK 11](https://www.oracle.com/br/java/technologies/javase/jdk11-archive-downloads.html)
-2. [Baixe e instale o IntelliJ](https://www.jetbrains.com/pt-br/idea/download/#section=windows)
+1. [Baixe e instale o JDK 11](https://www.oracle.com/br/java/technologies/javase/jdk11-archive-downloads.html).
+2. [Baixe e instale o IntelliJ](https://www.jetbrains.com/pt-br/idea/download/#section=windows).
 3. Clone o projeto com o seguinte comando:
    ```
    git clone https://github.com/FelipeMenezesDM/general-java-app-template.git
@@ -57,7 +56,7 @@ Para a instalação desta aplicação em ambiente local, é necessário ter inst
    PORT=8081
    PORT_DEBUG=8000
    ```
-5. Altere os parâmetros da aplicação de acordo com a necessidade
+5. Altere os parâmetros da aplicação de acordo com a necessidade.
 6. Baixe as dependências da aplicação usando os comandos do Maven:
    ```
    mvn clean install -Dmaven.test.skip=true
@@ -78,8 +77,8 @@ Para a instalação em ambiente local desta aplicação usando Docker, você dev
    ```
    git clone https://github.com/FelipeMenezesDM/general-java-app-template.git
    ```
-2. [Baixe e instale a versão mais recente do Docker](https://docs.docker.com/desktop/install/windows-install/)
-3. Execute o comando abaixo, na raíz do projeto, para baixar as imagens e criar os containers do Docker:
+2. [Baixe e instale a versão mais recente do Docker](https://docs.docker.com/desktop/install/windows-install/).
+3. Na pasta raíz do projeto, execute o comando abaixo para baixar as imagens e criar os containers do Docker:
    ```
    PORT=8081 PORT_DEBUG=8000 GITHUB_ACTOR=[SEU_USUARIO_GITHUB] GITHUB_TOKEN=[SEU_PERSONAL_TOKEN_GITHUB] docker compose -f ./infra/docker-compose.yml up -d
    ```
@@ -95,8 +94,8 @@ Para a instalação em ambiente local desta aplicação usando Docker, você dev
    PORT=8081
    PORT_DEBUG=8000
    ```
-5. **Em File > Settings > Build, Execution, Deployment > Compiler**, marque a opção "Build project automatically"
-6. **Em File > Settings > Advanced Settings > Compiler**, maque a opção "Allow auto-make to start even if developed application is currently running"
+5. **Em File > Settings > Build, Execution, Deployment > Compiler**, marque a opção "Build project automatically".
+6. **Em File > Settings > Advanced Settings > Compiler**, maque a opção "Allow auto-make to start even if developed application is currently running".
 7. Inicie o RemoveSpringApplication, **sem o modo debug**:<br>
    ![](./assets/intellij-start-remote-application.png)
 8. Após isso, seu ambiente de desenvolvimento local estará disponível e qualquer alteração feita será refletida automaticamente no container Docker.
@@ -131,4 +130,4 @@ mvn pitest-maven:mutationCoverage
 ```
 
 ### Testes integrados
-As informações de execução dos testes integrados desta aplicação podem ser visualizadas diretamente na [documentação do pacotes de testes](./tests/README.md).
+As informações de execução dos testes integrados desta aplicação podem ser visualizadas diretamente na [documentação do pacote de testes](./tests/README.md).
